@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DukeBot.Events;
+using Microsoft.Extensions.Configuration;
 using NetCord;
 using NetCord.Gateway;
 using NetCord.Logging;
 using System.Threading.Tasks;
 
-namespace DukeBot
+namespace DukeBot.Startup
 {
     public sealed class DiscordBot
     {

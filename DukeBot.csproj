@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="DukeQuotes.txt">
+    <None Update="Quotes\DukeQuotes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.1" />

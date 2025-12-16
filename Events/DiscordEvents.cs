@@ -7,8 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.Numerics;
+using DukeBot.Quotes;
 
-namespace DukeBot
+namespace DukeBot.Events
 {
 #pragma warning disable CS8602
     public class DiscordEvents

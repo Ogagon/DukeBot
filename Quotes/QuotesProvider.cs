@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DukeBot
+namespace DukeBot.Quotes
 {
     public  class QuotesProvider
     {
@@ -13,7 +13,7 @@ namespace DukeBot
         public QuotesProvider()
         {
             // Load all quotes at startup
-            var path = Path.Combine(AppContext.BaseDirectory, "DukeQuotes.txt");
+            var path = Path.Combine(AppContext.BaseDirectory, "Quotes/DukeQuotes.txt");
             if (File.Exists(path))
                 _quotes = File.ReadAllLines(path).Select(q => q.Trim()).Where(q => !string.IsNullOrWhiteSpace(q)).ToArray();
             else

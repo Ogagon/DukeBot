@@ -2,6 +2,8 @@
 using NetCord.Gateway;
 using NetCord.Logging;
 using DukeBot;
+using DukeBot.Startup;
+using DukeBot.Events;
 
 var dukeBot = new DiscordBot();
 var eventHandler = new DiscordEvents();
