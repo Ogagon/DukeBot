@@ -1,4 +1,5 @@
-﻿using DukeBot.Events;
+﻿using DotNetEnv;
+using DukeBot.Events;
 using Microsoft.Extensions.Configuration;
 using NetCord;
 using NetCord.Gateway;
@@ -26,6 +27,7 @@ namespace DukeBot.Startup
         }
         private string GetToken()
         {
+            Env.Load();
             var token = Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
             if (string.IsNullOrEmpty(token))
             {
