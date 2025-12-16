@@ -28,7 +28,7 @@ namespace DukeBot
             var token = Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
             if (string.IsNullOrEmpty(token))
             {
-               throw new InvalidOperationException("Discord token missing from appsettings.json (Discord:Token)");
+               throw new InvalidOperationException("Discord token missing.");
             }
             return token;
         }
