@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DukeBot", "DukeBot.csproj", "{BF318B8B-A8AB-4E6A-809C-A9633C034B1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF318B8B-A8AB-4E6A-809C-A9633C034B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF318B8B-A8AB-4E6A-809C-A9633C034B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF318B8B-A8AB-4E6A-809C-A9633C034B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF318B8B-A8AB-4E6A-809C-A9633C034B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54A1C617-174F-4183-9E79-63A7EBB1317C}
+	EndGlobalSection
+EndGlobal
