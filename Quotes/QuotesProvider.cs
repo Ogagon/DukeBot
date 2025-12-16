@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DukeBot.Quotes
+﻿namespace DukeBot.Quotes
 {
-    public  class QuotesProvider
+    public class QuotesProvider
     {
-        private  readonly string[] _quotes;
+        private readonly string[] _quotes;
 
         public QuotesProvider()
         {

@@ -1,13 +1,5 @@
-﻿using NetCord.Gateway;
-using NetCord;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic;
-using System.Numerics;
-using DukeBot.Quotes;
+﻿using DukeBot.Quotes;
+using NetCord.Gateway;
 
 namespace DukeBot.Events
 {
@@ -24,7 +16,7 @@ namespace DukeBot.Events
                 string quote = quotes.GetRandomQuote();
                 await msg.Channel.SendMessageAsync(quote);
             };
-            _commands["roll"] = async msg => await msg.Channel.SendMessageAsync($"{ new Random().Next() % 100}");
+            _commands["roll"] = async msg => await msg.Channel.SendMessageAsync($"{new Random().Next() % 100}");
             _commands["ping"] = async msg => await msg.Channel.SendMessageAsync("Pong");
             _commands["hello"] = async msg => await msg.Channel.SendMessageAsync($"Hello {msg.Author.Username}!");
         }
@@ -42,7 +34,7 @@ namespace DukeBot.Events
             if (!message.Content.StartsWith("!")) return;
 
             var parts = message.Content[1..].Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            
+
             if (parts.Length == 0) return;
 
             var command = parts[0].ToLower();

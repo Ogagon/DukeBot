@@ -1,10 +1,8 @@
 ﻿using DotNetEnv;
 using DukeBot.Events;
-using Microsoft.Extensions.Configuration;
 using NetCord;
 using NetCord.Gateway;
 using NetCord.Logging;
-using System.Threading.Tasks;
 
 namespace DukeBot.Startup
 {
@@ -23,15 +21,16 @@ namespace DukeBot.Startup
         {
             handler.RegisterCommands();
             _gatewayClient.MessageCreate += handler.OnMessageCreateAsync;
-            _gatewayClient.Ready +=  handler.OnReadyAsync;
+            _gatewayClient.Ready += handler.OnReadyAsync;
         }
         private string GetToken()
         {
-            Env.Load();
-            var token = Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
+            Env.Load(AppContext.BaseDirectory);
+            Console.WriteLine(AppContext.BaseDirectory);
+            var token = Environment.GetEnvironmentVariable("DISCORED_BOT_TOKEN");
             if (string.IsNullOrEmpty(token))
             {
-               throw new InvalidOperationException("Discord token missing.");
+                throw new InvalidOperationException("Discord token missing.");
             }
             return token;
         }
@@ -40,7 +39,7 @@ namespace DukeBot.Startup
             GatewayClient dukeBot = new(new BotToken(token), new GatewayClientConfiguration
             {
                 Logger = new ConsoleLogger(),
-                Intents = GatewayIntents.GuildMessages | GatewayIntents.DirectMessages | GatewayIntents.MessageContent |GatewayIntents.Guilds
+                Intents = GatewayIntents.GuildMessages | GatewayIntents.DirectMessages | GatewayIntents.MessageContent | GatewayIntents.Guilds
             });
             return dukeBot;
         }
