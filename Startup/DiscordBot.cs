@@ -15,7 +15,6 @@ namespace DukeBot.Startup
             var token = GetToken();
             _gatewayClient = ConfigureGatewayClient(token);
         }
-
         public async Task StartAsync() => await _gatewayClient.StartAsync();
         public void RegisterEventHandlers(DiscordEvents handler)
         {
