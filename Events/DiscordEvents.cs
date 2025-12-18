@@ -1,4 +1,5 @@
-﻿using DukeBot.Quotes;
+﻿using DukeBot.Jokes;
+using DukeBot.Quotes;
 using NetCord.Gateway;
 
 namespace DukeBot.Events
@@ -8,13 +9,24 @@ namespace DukeBot.Events
     {
         private readonly Dictionary<string, Func<Message, ValueTask>> _commands
         = new();
+        private QuotesProvider _quotesProvider;
+        private JokesProvider _jokesProvider;
+        public DiscordEvents() 
+        {
+            _quotesProvider = new QuotesProvider();
+            _jokesProvider = new JokesProvider();
+        }
         public void RegisterCommands()
         {
             _commands["quote"] = async msg =>
             {
-                QuotesProvider quotes = new QuotesProvider();
-                string quote = quotes.GetRandomQuote();
+                string quote = _quotesProvider.GetRandomQuote();
                 await msg.Channel.SendMessageAsync(quote);
+            };
+            _commands["joke"] = async msg =>
+            {
+                var joke = _jokesProvider.GetRandomJoke();
+                await msg.Channel.SendMessageAsync($"{joke.Question}\n{joke.Answer}");
             };
             _commands["pong"] = async msg => await msg.Channel.SendMessageAsync("Ping!");
             _commands["roll"] = async msg => await msg.Channel.SendMessageAsync($"{new Random().Next() % 100}");

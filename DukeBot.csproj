@@ -11,6 +11,9 @@
     <None Update=".env">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Jokes\jokes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Quotes\DukeQuotes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
