@@ -6,4 +6,4 @@ A discord bot that contains a few simple commands:
 - !quote (around 344 Duke Nukem vintage quotes)
 
 If you want to install it, just use the link to add it to your server (at your own risk, of course):
-https://discord.com/oauth2/authorize?client_id=1450444335832105132
+[DukeBot](https://discord.com/oauth2/authorize?client_id=1450444335832105132)
