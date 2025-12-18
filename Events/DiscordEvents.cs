@@ -11,6 +11,7 @@ namespace DukeBot.Events
         = new();
         private QuotesProvider _quotesProvider;
         private JokesProvider _jokesProvider;
+        private static Random _random = new Random();
         public DiscordEvents() 
         {
             _quotesProvider = new QuotesProvider();
@@ -29,7 +30,7 @@ namespace DukeBot.Events
                 await msg.Channel.SendMessageAsync($"{joke.Question}\n{joke.Answer}");
             };
             _commands["pong"] = async msg => await msg.Channel.SendMessageAsync("Ping!");
-            _commands["roll"] = async msg => await msg.Channel.SendMessageAsync($"{new Random().Next() % 100}");
+            _commands["roll"] = async msg => await msg.Channel.SendMessageAsync($"{_random.Next() % 100}");
             _commands["ping"] = async msg => await msg.Channel.SendMessageAsync("Pong!");
             _commands["hello"] = async msg => await msg.Channel.SendMessageAsync($"Hello {msg.Author.GlobalName}!");
         }
