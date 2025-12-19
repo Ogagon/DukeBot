@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DukeBot.Jokes
+﻿namespace DukeBot.Jokes
 {
     public class JokesProvider
     {
@@ -44,7 +38,8 @@ namespace DukeBot.Jokes
         }
         public Joke GetRandomJoke()
         {
-            if (jokes.Count == 0) return new Joke{
+            if (jokes.Count == 0) return new Joke
+            {
                 Question = "Q: Is there a joke here?",
                 Answer = "A: None that I can find..."
             };
