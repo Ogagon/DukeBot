@@ -32,7 +32,7 @@ namespace DukeBot.Events
             _commands["pong"] = async msg => await msg.Channel.SendMessageAsync("Ping!");
             _commands["roll"] = async msg => await msg.Channel.SendMessageAsync($"{_random.Next() % 100}");
             _commands["ping"] = async msg => await msg.Channel.SendMessageAsync("Pong!");
-            _commands["hello"] = async msg => await msg.Channel.SendMessageAsync($"Hello {msg.Author.GlobalName}!");
+            _commands["hello"] = async msg => await msg.Channel.SendMessageAsync($"Hello {msg.Author.GlobalName ?? msg.Author.Username}!");
         }
         public ValueTask OnReadyAsync(ReadyEventArgs args)
         {
