@@ -18,7 +18,6 @@ namespace DukeBot.Startup
         public async Task StartAsync() => await _gatewayClient.StartAsync();
         public void RegisterEventHandlers(DiscordEvents handler)
         {
-            handler.RegisterCommands();
             _gatewayClient.MessageCreate += handler.OnMessageCreateAsync;
             _gatewayClient.Ready += handler.OnReadyAsync;
         }
