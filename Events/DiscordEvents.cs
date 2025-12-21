@@ -1,4 +1,7 @@
-﻿using DukeBot.Jokes;
+﻿using DukeBot.Commands;
+using DukeBot.Features.Event_Scheduling;
+using DukeBot.Features.Polling;
+using DukeBot.Jokes;
 using DukeBot.Quotes;
 using NetCord.Gateway;
 using NetCord.Rest;
@@ -13,10 +16,15 @@ namespace DukeBot.Events
         private QuotesProvider _quotesProvider;
         private JokesProvider _jokesProvider;
         private static Random _random = new Random();
+        private PollsProvider _pollsProvider;
+        private ScheduleEventProvider _scheduleEventsProvider;
+        private readonly CommandRouter _router;
         public DiscordEvents()
         {
             _quotesProvider = new QuotesProvider();
             _jokesProvider = new JokesProvider();
+            _pollsProvider = new PollsProvider();
+            _scheduleEventsProvider = new ScheduleEventProvider();
         }
         public void RegisterCommands()
         {
@@ -27,57 +35,11 @@ namespace DukeBot.Events
             };
             _commands["poll"] = async msg =>
             {
-                // Example poll
-                string question = "What's your favorite color?";
-                string[] options = { "🔴 Red", "🟢 Green", "🔵 Blue" };
-
-                // Create the embed
-                var embed = new EmbedProperties
-                {
-                    Title = "📊 Poll",
-                    Description = question,
-                    Fields = new[]
-                    {
-            new EmbedFieldProperties { Name = "Options", Value = string.Join("\n", options), Inline = false }
-                    },
-                    Footer = new EmbedFooterProperties { Text = $"Poll created by {msg.Author.GlobalName ?? msg.Author.Username}" },
-                    Timestamp = DateTimeOffset.Now
-                };
-
-                var pollMessage = await msg.Channel.SendMessageAsync(new MessageProperties
-                {
-                    Embeds = new[] { embed }
-                });
-
-                // Add reactions for voting
-                foreach (var option in options)
-                {
-                    var emoji = option.Split(' ')[0]; // "🔴", "🟢", etc.
-                    await pollMessage.AddReactionAsync(emoji);
-                }
+                await _pollsProvider.CreatePoll(msg);
             };
             _commands["embed"] = async msg =>
             {
-                var embeded = new EmbedProperties
-                {
-                    Title = "Hello user!",
-                    Description = "This is an example embed",
-                    Footer = new EmbedFooterProperties
-                    {
-                        Text = "This is a footer area"
-                    },
-                    Fields = new[]
-                    {
-                    new EmbedFieldProperties{Inline = false, Name ="Field 1", Value="This is the first field"},
-                    new EmbedFieldProperties{Inline = true, Name ="Field 2", Value="This is the second field"},
-                    },
-                    Author = new EmbedAuthorProperties { Name = msg.Author.GlobalName ?? msg.Author.Username }
-                };
-                var message = new MessageProperties
-                {
-                    Embeds = new[] { embeded }
-                };
-                await msg.Channel.SendMessageAsync(message);
+                await _scheduleEventsProvider.CreateEvent(msg);
             };
             _commands["joke"] = async msg =>
             {
