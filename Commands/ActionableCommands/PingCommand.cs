@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DukeBot.Commands
+namespace DukeBot.Commands.ActionableCommands
 {
     public sealed class PingCommand : ICommand
     {

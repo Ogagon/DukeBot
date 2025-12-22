@@ -1,4 +1,4 @@
-﻿using DukeBot.Jokes;
+﻿using DukeBot.Features.Jokes;
 using Microsoft.VisualBasic;
 using NetCord.Gateway;
 using System;

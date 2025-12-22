@@ -1,4 +1,4 @@
-﻿namespace DukeBot.Jokes
+﻿namespace DukeBot.Features.Jokes
 {
     public class Joke
     {

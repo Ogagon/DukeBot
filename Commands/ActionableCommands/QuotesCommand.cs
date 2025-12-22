@@ -1,4 +1,4 @@
-﻿using DukeBot.Quotes;
+﻿using DukeBot.Features.Quotes;
 using NetCord.Gateway;
 using System;
 using System.Collections.Generic;

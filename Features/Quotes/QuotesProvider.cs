@@ -1,4 +1,4 @@
-﻿namespace DukeBot.Quotes
+﻿namespace DukeBot.Features.Quotes
 {
     public class QuotesProvider
     {
