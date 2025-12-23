@@ -2,10 +2,10 @@
 using DukeBot.Commands.ActionableCommands;
 using DukeBot.Events;
 using DukeBot.Features.Event_Scheduling;
-using DukeBot.Features.Polling;
-using DukeBot.Startup;
 using DukeBot.Features.Jokes;
+using DukeBot.Features.Polling;
 using DukeBot.Features.Quotes;
+using DukeBot.Startup;
 
 var quotesProvider = new QuotesProvider();
 var jokesProvider = new JokesProvider();

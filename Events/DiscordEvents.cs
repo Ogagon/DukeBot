@@ -1,10 +1,5 @@
 ﻿using DukeBot.Commands;
-using DukeBot.Features.Event_Scheduling;
-using DukeBot.Features.Polling;
-using DukeBot.Jokes;
-using DukeBot.Quotes;
 using NetCord.Gateway;
-using NetCord.Rest;
 
 namespace DukeBot.Events
 {

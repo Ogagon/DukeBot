@@ -1,11 +1,5 @@
 ﻿using DukeBot.Features.Jokes;
-using Microsoft.VisualBasic;
 using NetCord.Gateway;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DukeBot.Commands.ActionableCommands
 {

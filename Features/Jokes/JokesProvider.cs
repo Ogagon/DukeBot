@@ -8,8 +8,7 @@
             string currentQuestion = string.Empty;
 
             var basePath = AppContext.BaseDirectory;
-            var filePath = Path.Combine(basePath, "Jokes", "jokes.txt");
-
+            var filePath = Path.Combine(basePath, "Features", "Jokes", "jokes.txt");
             try
             {
 

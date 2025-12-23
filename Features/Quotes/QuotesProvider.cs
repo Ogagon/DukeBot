@@ -13,7 +13,7 @@
             // Load all quotes at startup
             try
             {
-                var path = Path.Combine(AppContext.BaseDirectory, "Quotes/DukeQuotes.txt");
+                var path = Path.Combine(AppContext.BaseDirectory, "Features/Quotes/DukeQuotes.txt");
                 if (File.Exists(path))
                     return File.ReadAllLines(path).Select(q => q.Trim()).Where(q => !string.IsNullOrWhiteSpace(q)).ToArray();
                 else
