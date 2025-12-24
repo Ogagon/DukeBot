@@ -8,6 +8,7 @@ namespace DukeBot.Features.Event_Scheduling
         public string? Description { get; set; }
         public IEnumerable<EmbedFieldProperties>? Fields { get; set; }
         public EmbedFooterProperties? Footer { get; set; }
+        public DateTimeOffset EventTime { get; set; }
 
     }
 }

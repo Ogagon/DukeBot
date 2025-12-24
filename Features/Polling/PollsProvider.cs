@@ -8,7 +8,7 @@ namespace DukeBot.Features.Polling
         public async Task CreatePoll(Message msg)
         {
             if (msg.Channel is null) return;
-
+            var author = new EmbedAuthorProperties { Name = msg.Author.GlobalName };
             // Example poll
             string question = "What's your favorite color?";
             string[] options = { "🔴 Red", "🟢 Green", "🔵 Blue" };
@@ -18,6 +18,7 @@ namespace DukeBot.Features.Polling
             {
                 Title = "📊 Poll",
                 Description = question,
+                Author = author,
                 Fields = new[]
                 {
                         new EmbedFieldProperties { Name = "Options", Value = string.Join("\n", options), Inline = false }

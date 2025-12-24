@@ -12,6 +12,7 @@ namespace DukeBot.Features.Event_Scheduling
             {
                 Title = "Hello user!",
                 Description = "This is an example embed",
+                Timestamp = DateTimeOffset.UtcNow,
                 Footer = new EmbedFooterProperties
                 {
                     Text = "This is a footer area"
