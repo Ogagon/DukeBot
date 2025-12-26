@@ -3,6 +3,7 @@ using DukeBot.Events;
 using NetCord;
 using NetCord.Gateway;
 using NetCord.Logging;
+using NetCord.Rest;
 
 namespace DukeBot.Startup
 {
@@ -15,6 +16,7 @@ namespace DukeBot.Startup
             var token = GetToken();
             _gatewayClient = ConfigureGatewayClient(token);
         }
+        public GatewayClient Client => _gatewayClient;
         public async Task StartAsync() => await _gatewayClient.StartAsync();
         public void RegisterEventHandlers(DiscordEvents handler)
         {
