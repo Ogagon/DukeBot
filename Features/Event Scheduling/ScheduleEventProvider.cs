@@ -7,6 +7,7 @@ namespace DukeBot.Features.Event_Scheduling
     {
         public async Task CreateEvent(Message msg)
         {
+            
             if (msg.Channel is null) return;
             var embeded = new EmbedProperties
             {
@@ -29,6 +30,7 @@ namespace DukeBot.Features.Event_Scheduling
                 Embeds = new[] { embeded }
             };
             await msg.Channel.SendMessageAsync(message);
+
         }
     }
 }
