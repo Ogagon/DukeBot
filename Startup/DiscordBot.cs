@@ -20,6 +20,7 @@ namespace DukeBot.Startup
         {
             _gatewayClient.MessageCreate += handler.OnMessageCreateAsync;
             _gatewayClient.Ready += handler.OnReadyAsync;
+            _gatewayClient.InteractionCreate += handler.OnInteractionCreate;
         }
         private string GetToken()
         {

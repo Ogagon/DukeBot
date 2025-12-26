@@ -1,4 +1,5 @@
 ﻿using DukeBot.Commands;
+using NetCord;
 using NetCord.Gateway;
 
 namespace DukeBot.Events
@@ -7,9 +8,11 @@ namespace DukeBot.Events
     public class DiscordEvents
     {
         private readonly CommandRouter _router;
-        public DiscordEvents(CommandRouter router)
+        private readonly SlashCommandRouter _slashRouter;
+        public DiscordEvents(CommandRouter router, SlashCommandRouter slashRouter)
         {
             _router = router;
+            _slashRouter = slashRouter;
         }
         public ValueTask OnReadyAsync(ReadyEventArgs args)
         {
@@ -23,6 +26,10 @@ namespace DukeBot.Events
                 return;
 
             await _router.RouteAsync(message);
+        }
+        public async ValueTask OnInteractionCreate(Interaction interaction)
+        {
+            await _slashRouter.RouteAsync(interaction);
         }
     }
 }
